@@ -32,7 +32,7 @@ jobs:
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD1 }}
         
       run: |
-        docker login -u $DOCKER_USER1 -p $DOCKER_PASSWORD1
+        echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USER" --password-stdin
 
 
     - name: Build Docker Image
